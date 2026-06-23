@@ -3,23 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>安砚 · 永远开心</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦋</text></svg>">
+<title>安砚 · 天天开心</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg-deep: #0a0812;
-    --rose: #c9a0b4;
-    --rose-light: #e8c4d8;
-    --rose-gold: #d4b0a4;
-    --champagne: #f0dcc8;
-    --lavender: #c4bfd6;
-    --text-primary: #f5edf2;
-    --text-secondary: rgba(245, 237, 242, 0.52);
-    --glass-bg: rgba(255, 255, 255, 0.025);
-    --glass-border: rgba(255, 255, 255, 0.06);
-    --accent-glow: rgba(220, 170, 190, 0.25);
+    --bg-deep: #06060f;
+    --blue: #5b9bd5;
+    --blue-light: #a0c4ff;
+    --text-primary: #e0e8f0;
+    --text-secondary: rgba(180, 200, 230, 0.55);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.07);
   }
 
   body {
@@ -28,7 +24,7 @@
     height: 100dvh;
     overflow: hidden;
     background: var(--bg-deep);
-    font-family: 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Noto Sans SC', 'STSong', serif;
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Noto Sans SC', sans-serif;
     cursor: crosshair;
     -webkit-tap-highlight-color: transparent;
     -webkit-user-select: none;
@@ -60,44 +56,43 @@
   .glass-card {
     position: relative;
     background: var(--glass-bg);
-    backdrop-filter: blur(28px) saturate(140%);
-    -webkit-backdrop-filter: blur(28px) saturate(140%);
+    backdrop-filter: blur(24px) saturate(120%);
+    -webkit-backdrop-filter: blur(24px) saturate(120%);
     border: 1px solid var(--glass-border);
-    border-radius: 44px;
-    padding: clamp(40px, 6vw, 68px) clamp(36px, 8vw, 88px);
+    border-radius: 40px;
+    padding: clamp(40px, 6vw, 72px) clamp(36px, 8vw, 88px);
     text-align: center;
     pointer-events: auto;
     transform: translate(var(--parallax-x, 0px), var(--parallax-y, 0px));
-    transition: box-shadow 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.02) inset,
-      0 8px 48px rgba(0, 0, 0, 0.45),
-      0 0 100px rgba(200, 150, 175, 0.05);
+      0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+      0 8px 40px rgba(0, 0, 0, 0.4),
+      0 0 80px rgba(80, 140, 220, 0.06);
     will-change: transform;
   }
 
   .glass-card:hover {
     transform: translate(var(--parallax-x, 0px), calc(var(--parallax-y, 0px) - 6px));
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.04) inset,
-      0 20px 64px rgba(0, 0, 0, 0.55),
-      0 0 140px rgba(200, 150, 175, 0.1);
+      0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+      0 16px 56px rgba(0, 0, 0, 0.5),
+      0 0 120px rgba(80, 140, 220, 0.12);
   }
 
-  /* Gradient border ring */
   .glass-card::before {
     content: '';
     position: absolute;
     inset: -1px;
-    border-radius: 44px;
+    border-radius: 40px;
     padding: 1px;
     background: linear-gradient(
       135deg,
-      rgba(220, 180, 200, 0.18) 0%,
-      rgba(200, 160, 180, 0.04) 25%,
-      rgba(255, 255, 255, 0) 45%,
-      rgba(180, 160, 200, 0.04) 70%,
-      rgba(220, 180, 200, 0.1) 100%
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.02) 30%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.02) 70%,
+      rgba(255, 255, 255, 0.08) 100%
     );
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -106,68 +101,66 @@
     pointer-events: none;
   }
 
-  /* ── Butterfly Icon ───────────────────── */
-  .icon-wrap {
+  .star-icon {
     display: inline-block;
-    font-size: 30px;
-    margin-bottom: 18px;
-    animation: icon-float 3.5s ease-in-out infinite;
-    filter: drop-shadow(0 0 16px rgba(220, 180, 200, 0.5));
+    font-size: 28px;
+    margin-bottom: 20px;
+    animation: star-pulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(120, 170, 240, 0.5));
   }
 
-  @keyframes icon-float {
-    0%, 100% { transform: translateY(0) scale(1); opacity: 0.75; }
-    50% { transform: translateY(-8px) scale(1.15); opacity: 1; }
+  @keyframes star-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.25); opacity: 1; }
   }
 
-  /* ── Typography ───────────────────────── */
   .wish-label {
-    font-size: clamp(12px, 1.6vw, 14px);
+    font-size: clamp(13px, 1.8vw, 15px);
     font-weight: 400;
-    letter-spacing: 0.7em;
+    letter-spacing: 0.6em;
     color: var(--text-secondary);
     text-transform: uppercase;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 
   .main-title {
-    font-size: clamp(38px, 6.5vw, 68px);
-    font-weight: 250;
-    letter-spacing: 0.14em;
+    font-size: clamp(40px, 7vw, 72px);
+    font-weight: 200;
+    letter-spacing: 0.12em;
     color: var(--text-primary);
-    line-height: 1.35;
-    background: linear-gradient(180deg, #faf0f5 0%, #e0c0d0 30%, #d4a8b8 55%, #c898b0 100%);
+    line-height: 1.3;
+    background: linear-gradient(180deg, #e0e8f8 0%, #8ab4d8 50%, #5b8fc0 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 28px rgba(210, 150, 175, 0.35));
+    filter: drop-shadow(0 0 24px rgba(80, 140, 210, 0.3));
     animation: title-float 6s ease-in-out infinite;
   }
 
   @keyframes title-float {
     0%, 100% { transform: translateY(0); }
-    25% { transform: translateY(-5px); }
-    75% { transform: translateY(3px); }
+    25% { transform: translateY(-6px); }
+    75% { transform: translateY(4px); }
   }
 
   .divider {
     width: 60px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(210, 160, 185, 0.5), transparent);
-    margin: 26px auto;
+    background: linear-gradient(90deg, transparent, rgba(100, 150, 210, 0.5), transparent);
+    margin: 28px auto;
   }
 
   .sub-text {
-    font-size: clamp(12px, 1.4vw, 14px);
+    font-size: clamp(13px, 1.5vw, 14px);
     font-weight: 300;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.25em;
     color: var(--text-secondary);
     font-style: italic;
   }
 
   /* ── Wish Counter ─────────────────────── */
   .wish-counter {
-    margin-top: 34px;
+    margin-top: 36px;
     display: flex;
     align-items: baseline;
     gap: 6px;
@@ -183,19 +176,19 @@
   }
 
   .wish-count {
-    font-size: 34px;
+    font-size: 36px;
     font-weight: 200;
-    color: var(--rose-light);
+    color: var(--blue-light);
     font-variant-numeric: tabular-nums;
     font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
-    text-shadow: 0 0 20px rgba(230, 180, 200, 0.4);
+    text-shadow: 0 0 20px rgba(120, 180, 240, 0.4);
   }
 
   .wish-label-small {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 300;
     color: var(--text-secondary);
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
   }
 
   /* ── Instruction ──────────────────────── */
@@ -207,22 +200,22 @@
     font-size: 13px;
     font-weight: 300;
     letter-spacing: 0.2em;
-    color: rgba(255, 255, 255, 0.28);
+    color: rgba(255, 255, 255, 0.3);
     z-index: 2;
     pointer-events: none;
     animation: fade-hint 4s ease-in-out infinite;
   }
 
   @keyframes fade-hint {
-    0%, 100% { opacity: 0.22; }
-    50% { opacity: 0.5; }
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 0.55; }
   }
 
   /* ── Ripple ───────────────────────────── */
   .ripple {
     position: fixed;
     border-radius: 50%;
-    border: 1px solid rgba(230, 190, 210, 0.4);
+    border: 1px solid rgba(120, 180, 240, 0.4);
     animation: ripple-out 1.2s ease-out forwards;
     pointer-events: none;
     z-index: 3;
@@ -235,13 +228,13 @@
 
   /* ── Wish Input ──────────────────────── */
   .wish-input-area {
-    margin-top: 26px;
+    margin-top: 28px;
     display: flex;
     align-items: center;
     gap: 10px;
     background: var(--glass-bg);
-    backdrop-filter: blur(16px) saturate(140%);
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
     border: 1px solid var(--glass-border);
     border-radius: 50px;
     padding: 6px 6px 6px 22px;
@@ -256,8 +249,8 @@
   }
 
   .wish-input-area:focus-within {
-    border-color: rgba(210, 160, 185, 0.35);
-    box-shadow: 0 0 24px rgba(210, 160, 185, 0.08);
+    border-color: rgba(100, 160, 230, 0.3);
+    box-shadow: 0 0 20px rgba(100, 160, 230, 0.08);
   }
 
   .wish-input-area.visible {
@@ -273,18 +266,18 @@
     font-size: 14px;
     font-family: inherit;
     font-weight: 300;
-    color: #ead8e0;
+    color: #c8d8f0;
     letter-spacing: 0.08em;
     min-width: 0;
   }
 
   .wish-input::placeholder {
-    color: rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.2);
     letter-spacing: 0.08em;
   }
 
   .wish-input:focus::placeholder {
-    color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.1);
   }
 
   .wish-send-btn {
@@ -292,9 +285,9 @@
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.03);
-    color: rgba(230, 190, 210, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(120, 180, 240, 0.6);
     font-size: 16px;
     cursor: pointer;
     display: flex;
@@ -306,18 +299,18 @@
   }
 
   .wish-send-btn:hover {
-    background: rgba(220, 170, 195, 0.12);
-    border-color: rgba(220, 170, 195, 0.3);
-    color: rgba(230, 190, 210, 0.9);
-    box-shadow: 0 0 18px rgba(220, 170, 195, 0.15);
+    background: rgba(100, 160, 240, 0.1);
+    border-color: rgba(100, 160, 240, 0.3);
+    color: rgba(140, 200, 255, 0.9);
+    box-shadow: 0 0 16px rgba(100, 160, 240, 0.15);
   }
 
   .wish-send-btn:active {
     transform: scale(0.9);
   }
 
-  /* ── Floating Petals ────────────────── */
-  .floating-petals {
+  /* ── Floating Wishes ────────────────── */
+  .floating-wishes {
     position: fixed;
     inset: 0;
     z-index: 0;
@@ -325,66 +318,733 @@
     overflow: hidden;
   }
 
-  .floating-petal {
+  .floating-wish {
     position: absolute;
-    bottom: -40px;
+    bottom: -30px;
     white-space: nowrap;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
-    letter-spacing: 0.08em;
-    animation: petal-float-up 11s ease-in forwards;
+    letter-spacing: 0.1em;
+    color: rgba(160, 200, 240, 0.45);
+    text-shadow: 0 0 10px rgba(120, 180, 240, 0.25);
+    animation: wish-float-up 10s ease-in forwards;
     font-family: inherit;
-    text-shadow: 0 0 12px rgba(230, 190, 210, 0.3);
   }
 
-  @keyframes petal-float-up {
-    0% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 0;
-    }
-    8% {
-      opacity: 0.6;
-    }
-    55% {
-      opacity: 0.4;
-    }
-    100% {
-      transform: translateY(-105vh) rotate(40deg);
-      opacity: 0;
-    }
+  @keyframes wish-float-up {
+    0% { transform: translateY(0); opacity: 0; }
+    8% { opacity: 0.5; }
+    60% { opacity: 0.35; }
+    100% { transform: translateY(-105vh); opacity: 0; }
+  }
+
+  /* ── Message Popup ────────────────────── */
+  .msg-popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .msg-popup-overlay.show {
+    opacity: 1;
+  }
+
+  .msg-popup-overlay.hidden {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .msg-popup {
+    position: relative;
+    background: rgba(14, 16, 28, 0.88);
+    backdrop-filter: blur(30px) saturate(140%);
+    -webkit-backdrop-filter: blur(30px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 28px;
+    padding: 36px 32px 28px;
+    text-align: center;
+    max-width: 340px;
+    width: 90%;
+    transform: translateY(20px) scale(0.92);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+      0 24px 64px rgba(0, 0, 0, 0.6),
+      0 0 80px rgba(80, 140, 220, 0.08);
+  }
+
+  .msg-popup-overlay.show .msg-popup {
+    transform: translateY(0) scale(1);
+  }
+
+  .msg-popup::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 28px;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(120, 180, 240, 0.2) 0%,
+      rgba(120, 180, 240, 0.04) 40%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(120, 180, 240, 0.08) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .msg-popup-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    animation: star-pulse 2s ease-in-out infinite;
+  }
+
+  .msg-popup-title {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: rgba(140, 190, 240, 0.7);
+    margin-bottom: 14px;
+  }
+
+  .msg-popup-text {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: #e0e8f0;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    word-break: break-word;
+  }
+
+  .msg-popup-time {
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+  }
+
+  .msg-popup-dismiss {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: rgba(140, 190, 240, 0.5);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    padding: 8px 20px;
+    transition: color 0.3s;
+  }
+
+  .msg-popup-dismiss:hover {
+    color: rgba(160, 210, 255, 0.9);
+  }
+
+  /* ── Bottle Button ────────────────────── */
+  .bottle-btn {
+    position: fixed;
+    bottom: clamp(80px, 12vh, 110px);
+    right: clamp(20px, 4vw, 32px);
+    z-index: 5;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(14, 16, 28, 0.7);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    color: rgba(120, 180, 240, 0.7);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.35s ease;
+    pointer-events: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    line-height: 1;
+  }
+
+  .bottle-btn:hover {
+    border-color: rgba(120, 180, 240, 0.3);
+    color: rgba(160, 210, 255, 0.95);
+    box-shadow: 0 4px 24px rgba(80, 140, 220, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .bottle-btn:active {
+    transform: scale(0.9);
+  }
+
+  .bottle-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    background: rgba(90, 155, 220, 0.9);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    transition: transform 0.3s ease;
+    line-height: 1;
+  }
+
+  .bottle-badge:empty {
+    display: none;
+  }
+
+  /* ── Bottle Panel ─────────────────────── */
+  .bottle-panel {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 8;
+    width: 100%;
+    max-width: 400px;
+    height: 50vh;
+    max-height: 460px;
+    background: rgba(10, 12, 22, 0.92);
+    backdrop-filter: blur(28px) saturate(140%);
+    -webkit-backdrop-filter: blur(28px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px 28px 0 0;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: auto;
+    box-shadow:
+      0 -8px 40px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  }
+
+  .bottle-panel.open {
+    transform: translateY(0);
+  }
+
+  .bottle-panel::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 28px 28px 0 0;
+    padding: 1px;
+    background: linear-gradient(
+      180deg,
+      rgba(120, 180, 240, 0.15) 0%,
+      rgba(120, 180, 240, 0.03) 30%,
+      rgba(255, 255, 255, 0) 70%,
+      rgba(120, 180, 240, 0.05) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .bottle-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    flex-shrink: 0;
+  }
+
+  .bottle-title {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: rgba(140, 190, 240, 0.85);
+  }
+
+  .bottle-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    font-family: inherit;
+    line-height: 1;
+  }
+
+  .bottle-close:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .bottle-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .bottle-body::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .bottle-body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .bottle-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 1px;
+  }
+
+  .bottle-unread-section {
+    text-align: center;
+    width: 100%;
+  }
+
+  .bottle-unread-count {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+  }
+
+  .bottle-open-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 32px;
+    border-radius: 50px;
+    border: 1px solid rgba(120, 180, 240, 0.3);
+    background: rgba(90, 155, 220, 0.1);
+    color: rgba(160, 210, 255, 0.9);
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.35s ease;
+    box-shadow: 0 0 20px rgba(80, 140, 220, 0.08);
+  }
+
+  .bottle-open-btn:hover {
+    background: rgba(90, 155, 220, 0.18);
+    border-color: rgba(140, 200, 255, 0.5);
+    box-shadow: 0 0 30px rgba(80, 140, 220, 0.18);
+    transform: translateY(-1px);
+  }
+
+  .bottle-open-btn:active {
+    transform: scale(0.95);
+  }
+
+  .bottle-open-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .bottle-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(120, 180, 240, 0.15), transparent);
+    flex-shrink: 0;
+  }
+
+  .bottle-input-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .bottle-input-label {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 10px;
+  }
+
+  .bottle-input-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .bottle-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-family: inherit;
+    font-weight: 300;
+    color: #c8d8f0;
+    letter-spacing: 0.05em;
+    outline: none;
+    transition: border-color 0.3s;
+    min-width: 0;
+  }
+
+  .bottle-input::placeholder {
+    color: rgba(255, 255, 255, 0.18);
+  }
+
+  .bottle-input:focus {
+    border-color: rgba(120, 180, 240, 0.3);
+  }
+
+  .bottle-send-btn {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(90, 155, 220, 0.08);
+    color: rgba(120, 180, 240, 0.6);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    font-family: inherit;
+    line-height: 1;
+  }
+
+  .bottle-send-btn:hover {
+    background: rgba(90, 155, 220, 0.15);
+    border-color: rgba(120, 180, 240, 0.3);
+    color: rgba(160, 210, 255, 0.9);
+  }
+
+  .bottle-send-btn:active {
+    transform: scale(0.9);
+  }
+
+  .bottle-empty {
+    text-align: center;
+    padding: 30px 20px;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+
+  /* ── Backdrop for bottle panel ────────── */
+  .bottle-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 7;
+    background: rgba(0, 0, 0, 0.4);
+    pointer-events: auto;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .bottle-backdrop.show {
+    opacity: 1;
+  }
+
+  .bottle-backdrop.hidden {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  /* ── Connection indicator ─────────────── */
+  .connection-dot {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.35);
+    pointer-events: none;
+  }
+
+  .connection-dot::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(100, 200, 220, 0.7);
+    box-shadow: 0 0 8px rgba(100, 200, 220, 0.4);
+    transition: background 0.5s, box-shadow 0.5s;
+  }
+
+  .connection-dot.offline::before {
+    background: rgba(220, 100, 100, 0.7);
+    box-shadow: 0 0 8px rgba(220, 100, 100, 0.4);
+  }
+
+  /* ── Wish Wall ─────────────────────────── */
+  .wishwall-btn {
+    position: fixed;
+    bottom: clamp(80px, 12vh, 110px);
+    left: clamp(20px, 4vw, 32px);
+    z-index: 6;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    color: rgba(200, 180, 120, 0.7);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.35s;
+    font-family: inherit;
+    line-height: 1;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(200, 160, 80, 0.06);
+    pointer-events: auto;
+  }
+
+  .wishwall-btn:hover {
+    border-color: rgba(200, 160, 80, 0.3);
+    color: rgba(240, 200, 100, 0.9);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.4), 0 0 40px rgba(200, 160, 80, 0.12);
+    transform: translateY(-3px);
+  }
+
+  .wishwall-btn:active {
+    transform: scale(0.9);
+  }
+
+  .wishwall-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 8;
+    background: rgba(0, 0, 0, 0.45);
+    pointer-events: auto;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .wishwall-backdrop.show {
+    opacity: 1;
+  }
+
+  .wishwall-backdrop.hidden {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .wishwall-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    max-height: 60vh;
+    background: rgba(10, 12, 28, 0.92);
+    backdrop-filter: blur(32px) saturate(120%);
+    -webkit-backdrop-filter: blur(32px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: none;
+    border-radius: 28px 28px 0 0;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+    box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .wishwall-panel.show {
+    transform: translateY(0);
+  }
+
+  .wishwall-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    flex-shrink: 0;
+  }
+
+  .wishwall-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-primary);
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .wishwall-close {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    line-height: 1;
+  }
+
+  .wishwall-close:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+
+  .wishwall-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .wishwall-body::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .wishwall-body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .wishwall-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+  }
+
+  .wish-card {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+  }
+
+  .wish-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .wish-card-star {
+    font-size: 16px;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  .wish-card-text {
+    flex: 1;
+    font-size: 14px;
+    color: rgba(200, 210, 230, 0.8);
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+  }
+
+  .wish-card-time {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .wishwall-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    letter-spacing: 0.08em;
   }
 
   /* ── Responsive ───────────────────────── */
   @media (max-width: 640px) {
     .glass-card {
-      border-radius: 30px;
-      padding: 30px 26px;
+      border-radius: 28px;
+      padding: 32px 28px;
     }
-    .glass-card::before { border-radius: 30px; }
-    .icon-wrap { font-size: 24px; margin-bottom: 10px; }
-    .divider { margin: 18px auto; }
-    .wish-counter { margin-top: 22px; }
-    .wish-count { font-size: 26px; }
-    .wish-input-area { margin-top: 18px; max-width: 300px; padding: 5px 5px 5px 18px; }
+    .glass-card::before { border-radius: 28px; }
+    .star-icon { font-size: 22px; margin-bottom: 12px; }
+    .divider { margin: 20px auto; }
+    .wish-counter { margin-top: 24px; }
+    .wish-count { font-size: 28px; }
+    .wish-input-area { margin-top: 20px; max-width: 300px; padding: 5px 5px 5px 18px; }
     .wish-input { font-size: 13px; }
     .wish-send-btn { width: 34px; height: 34px; font-size: 14px; }
-    .floating-petal { font-size: 14px; }
+    .floating-wish { font-size: 12px; }
+    .msg-popup { padding: 28px 24px 22px; border-radius: 22px; }
+    .msg-popup::before { border-radius: 22px; }
+    .msg-popup-text { font-size: 15px; }
+    .bottle-panel { max-width: 100%; border-radius: 24px 24px 0 0; }
+    .bottle-panel::before { border-radius: 24px 24px 0 0; }
+    .bottle-btn { bottom: 70px; right: 16px; width: 42px; height: 42px; font-size: 18px; }
+    .wishwall-btn { bottom: 70px; left: 14px; width: 42px; height: 42px; font-size: 17px; }
+    .wishwall-panel { max-height: 55vh; border-radius: 22px 22px 0 0; }
+    .bottle-header { padding: 16px 18px 12px; }
+    .bottle-body { padding: 16px 18px; }
+    .bottle-input-area { gap: 6px; }
   }
 </style>
 </head>
 <body>
   <canvas id="starfield"></canvas>
 
-  <!-- Floating petals in background -->
-  <div class="floating-petals" id="floatingPetals"></div>
+  <!-- Connection indicator -->
+  <div class="connection-dot" id="connectionDot">已连接</div>
+
+  <!-- Floating wish messages in background -->
+  <div class="floating-wishes" id="floatingWishes"></div>
 
   <div class="overlay">
     <div class="glass-card" id="glassCard">
-      <div class="icon-wrap">🦋</div>
-      <div class="wish-label">祈 愿</div>
-      <h1 class="main-title">安砚永远开心</h1>
+      <div class="star-icon">✨</div>
+      <div class="wish-label">安 砚</div>
+      <h1 class="main-title">安砚天天开心</h1>
       <div class="divider"></div>
-      <p class="sub-text">May An Yan always be happy, always be loved</p>
+      <p class="sub-text">May every day be filled with joy</p>
     </div>
 
     <div class="wish-counter" id="wishCounter">
@@ -392,13 +1052,13 @@
       <span class="wish-label-small">个心愿</span>
     </div>
 
-    <!-- Wish message input -->
+    <!-- Wish input -->
     <div class="wish-input-area" id="wishInputArea">
       <input
         type="text"
         class="wish-input"
         id="wishInput"
-        placeholder="为安砚写下心愿…"
+        placeholder="写下你的心愿…"
         maxlength="50"
         autocomplete="off"
       >
@@ -408,21 +1068,95 @@
 
   <p class="instruction" id="instruction">轻触屏幕 · 许下心愿</p>
 
+  <!-- ── Message Popup (reveals a bottle message) ── -->
+  <div class="msg-popup-overlay hidden" id="msgPopupOverlay">
+    <div class="msg-popup">
+      <div class="msg-popup-icon">💌</div>
+      <div class="msg-popup-title" id="msgPopupTitle">漂流瓶 · 来自上一个人的留言</div>
+      <div class="msg-popup-text" id="msgPopupText"></div>
+      <div class="msg-popup-time" id="msgPopupTime"></div>
+      <button class="msg-popup-dismiss" id="msgPopupDismiss">我知道了 ✨</button>
+    </div>
+  </div>
+
+  <!-- ── Bottle Backdrop ── -->
+  <div class="bottle-backdrop hidden" id="bottleBackdrop"></div>
+
+  <!-- ── Bottle Panel ── -->
+  <div class="bottle-panel" id="bottlePanel">
+    <div class="bottle-header">
+      <span class="bottle-title">💌 漂流瓶</span>
+      <button class="bottle-close" id="bottleClose">✕</button>
+    </div>
+    <div class="bottle-body" id="bottleBody">
+      <!-- Unread section -->
+      <div class="bottle-unread-section" id="bottleUnreadSection">
+        <div class="bottle-unread-count" id="bottleUnreadCount">…</div>
+        <button class="bottle-open-btn" id="bottleOpenBtn">
+          <span>📭</span> 打开漂流瓶
+        </button>
+      </div>
+      <div class="bottle-divider"></div>
+      <!-- Input section -->
+      <div class="bottle-input-section">
+        <div class="bottle-input-label">✍️ 留下你的漂流信</div>
+        <div class="bottle-input-area">
+          <input
+            type="text"
+            class="bottle-input"
+            id="bottleInput"
+            placeholder="写一句话，留给下一个人…"
+            maxlength="200"
+            autocomplete="off"
+          >
+          <button class="bottle-send-btn" id="bottleSendBtn" aria-label="发送留言">✧</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Wish Wall ── -->
+  <div class="wishwall-backdrop hidden" id="wishwallBackdrop"></div>
+  <div class="wishwall-panel" id="wishwallPanel">
+    <div class="wishwall-header">
+      <span class="wishwall-title">🌟 心愿墙</span>
+      <button class="wishwall-close" id="wishwallClose">✕</button>
+    </div>
+    <div class="wishwall-body" id="wishwallBody">
+      <div class="wishwall-empty">还没有心愿，快来许一个吧 ✨</div>
+    </div>
+  </div>
+
+  <!-- ── Bottle Toggle Button ── -->
+  <button class="bottle-btn" id="bottleBtn" aria-label="漂流瓶">
+    💌
+    <span class="bottle-badge" id="bottleBadge"></span>
+  </button>
+
+  <!-- ── Wish Wall Button ── -->
+  <button class="wishwall-btn" id="wishwallBtn" aria-label="心愿墙">🌟</button>
+
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script>
   (function() {
     /* ═══════════════════════════════════════════════════════════════════════
        CONFIGURATION
        ═══════════════════════════════════════════════════════════════════════ */
     const CONFIG = {
-      bgStarCount: 240,
-      nebulaCount: 4,
-      maxLanterns: 14,
-      maxParticles: 350,
-      heartPoints: 160,
+      bgStarCount: 220,
+      nebulaCount: 3,
+      maxLanterns: 12,
+      maxParticles: 300,
+      heartPoints: 150,
       shootingStarInterval: [4000, 10000],
-      lanternRiseSpeed: 0.55,
-      lanternWobble: 0.45,
-      chimeVolume: 0.07,
+      lanternRiseSpeed: 0.6,
+      lanternWobble: 0.4,
+      chimeVolume: 0.08,
+      // ⚠️ 替换为你的 Supabase 项目 URL 和 anon key
+      //    在 supabase.com → 你的项目 → Settings → API 中获取
+      supabaseUrl: 'https://mdqphmajsymhvfjjqxzo.supabase.co',
+      supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1kcXBobWFqc3ltaHZmampxeHpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIxNzgxNDAsImV4cCI6MjA5Nzc1NDE0MH0.CvwkzduVhhkpBinc588DjS_ZuUz_Q6F9ULjIgkGjBug',
     };
 
     /* ═══════════════════════════════════════════════════════════════════════
@@ -437,13 +1171,42 @@
     const wishInput = document.getElementById('wishInput');
     const wishSendBtn = document.getElementById('wishSendBtn');
     const wishInputArea = document.getElementById('wishInputArea');
-    const floatingPetals = document.getElementById('floatingPetals');
+    const floatingWishes = document.getElementById('floatingWishes');
+    const connectionDot = document.getElementById('connectionDot');
+
+    // Message popup
+    const msgPopupOverlay = document.getElementById('msgPopupOverlay');
+    const msgPopupTitle = document.getElementById('msgPopupTitle');
+    const msgPopupText = document.getElementById('msgPopupText');
+    const msgPopupTime = document.getElementById('msgPopupTime');
+    const msgPopupDismiss = document.getElementById('msgPopupDismiss');
+
+    // Bottle panel
+    const bottleBtn = document.getElementById('bottleBtn');
+    const bottleBadge = document.getElementById('bottleBadge');
+    const bottlePanel = document.getElementById('bottlePanel');
+    const bottleBackdrop = document.getElementById('bottleBackdrop');
+    const bottleClose = document.getElementById('bottleClose');
+    const bottleBody = document.getElementById('bottleBody');
+    const bottleUnreadSection = document.getElementById('bottleUnreadSection');
+    const bottleUnreadCount = document.getElementById('bottleUnreadCount');
+    const bottleOpenBtn = document.getElementById('bottleOpenBtn');
+    const bottleInput = document.getElementById('bottleInput');
+    const bottleSendBtn = document.getElementById('bottleSendBtn');
+
+    // Wish wall
+    const wishwallBtn = document.getElementById('wishwallBtn');
+    const wishwallBackdrop = document.getElementById('wishwallBackdrop');
+    const wishwallPanel = document.getElementById('wishwallPanel');
+    const wishwallClose = document.getElementById('wishwallClose');
+    const wishwallBody = document.getElementById('wishwallBody');
 
     /* ═══════════════════════════════════════════════════════════════════════
        STATE
        ═══════════════════════════════════════════════════════════════════════ */
     let W = 0, H = 0;
     let totalWishes = 0;
+    let totalUnreadMessages = 0;
     let mouseX = 0, mouseY = 0;
     let targetMouseX = 0, targetMouseY = 0;
     let time = 0;
@@ -456,30 +1219,389 @@
     let nebulaBlobs = [];
     let wishMessages = [];
     let audioCtx = null;
+    let lastWishCount = 0;
+    let lastUnreadCount = 0;
+    let popupTimer = null;
 
     /* ═══════════════════════════════════════════════════════════════════════
-       LOCAL STORAGE
+       API HELPERS
        ═══════════════════════════════════════════════════════════════════════ */
-    const STORAGE_KEY = 'anyan-wish-messages';
+    let supabase = null;
+    let localInsertIds = new Set();
+    let localUpdateIds = new Set();
 
-    function loadWishes() {
+    function initSupabase() {
+      if (CONFIG.supabaseUrl.includes('YOUR_')) {
+        console.warn('⚠️ 请先配置 Supabase URL 和 Key');
+        return false;
+      }
       try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (raw) {
-          wishMessages = JSON.parse(raw);
-          if (!Array.isArray(wishMessages)) wishMessages = [];
-        }
+        supabase = window.supabase.createClient(CONFIG.supabaseUrl, CONFIG.supabaseKey);
+        return true;
       } catch (e) {
-        wishMessages = [];
+        console.error('Supabase 初始化失败:', e);
+        return false;
       }
     }
 
-    function saveWish(text) {
-      wishMessages.push({ text, time: Date.now() });
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(wishMessages));
-      } catch (e) {}
+    /* ═══════════════════════════════════════════════════════════════════════
+       DATA LOADING
+       ═══════════════════════════════════════════════════════════════════════ */
+    async function loadFromSupabase() {
+      if (!supabase) return;
+
+      // Load wishes
+      const { data: wishesData } = await supabase
+        .from('wishes').select('*').order('created_at', { ascending: true });
+      if (wishesData) {
+        wishMessages = wishesData;
+        totalWishes = wishesData.length;
+        lastWishCount = wishesData.length;
+        wishCountEl.textContent = totalWishes;
+        connectionDot.classList.remove('offline');
+        connectionDot.textContent = '已连接';
+      }
+
+      // Load unrevealed message count
+      await refreshUnreadCount();
     }
+
+    async function refreshUnreadCount() {
+      if (!supabase) return;
+      const { count, error } = await supabase
+        .from('messages')
+        .select('*', { count: 'exact', head: true })
+        .eq('revealed', false);
+      if (!error && count !== null) {
+        totalUnreadMessages = count;
+        lastUnreadCount = count;
+        updateBottleBadge();
+        updateBottlePanel();
+      }
+    }
+
+    function setupRealtime() {
+      if (!supabase) return;
+
+      // Subscribe to new wishes
+      supabase
+        .channel('wishes-realtime')
+        .on('postgres_changes',
+          { event: 'INSERT', schema: 'public', table: 'wishes' },
+          (payload) => {
+            const newWish = payload.new;
+            if (localInsertIds.has(newWish.id)) {
+              localInsertIds.delete(newWish.id);
+              return;
+            }
+            wishMessages.push(newWish);
+            totalWishes = wishMessages.length;
+            lastWishCount = totalWishes;
+            wishCountEl.textContent = totalWishes;
+            spawnFloatingWish(newWish.text);
+            const rect = glassCard.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2 + (Math.random() - 0.5) * 200;
+            const cy = rect.top + rect.height / 2 + (Math.random() - 0.5) * 100;
+            createLantern(cx, cy, newWish.text);
+            if (wishwallPanel.classList.contains('show')) renderWishWall();
+            if (totalWishes >= 3) {
+              instruction.style.opacity = '0';
+              instruction.style.transition = 'opacity 1s ease';
+            }
+          }
+        )
+        .subscribe();
+
+      // Subscribe to new messages
+      supabase
+        .channel('messages-realtime')
+        .on('postgres_changes',
+          { event: 'INSERT', schema: 'public', table: 'messages' },
+          (payload) => {
+            if (localInsertIds.has(payload.new.id)) {
+              localInsertIds.delete(payload.new.id);
+              return;
+            }
+            if (!payload.new.revealed) {
+              totalUnreadMessages++;
+              lastUnreadCount = totalUnreadMessages;
+              updateBottleBadge();
+              updateBottlePanel();
+            }
+          }
+        )
+        .on('postgres_changes',
+          { event: 'UPDATE', schema: 'public', table: 'messages' },
+          (payload) => {
+            if (localUpdateIds.has(payload.new.id)) {
+              localUpdateIds.delete(payload.new.id);
+              return;
+            }
+            if (payload.new.revealed && !payload.old.revealed) {
+              totalUnreadMessages = Math.max(0, totalUnreadMessages - 1);
+              lastUnreadCount = totalUnreadMessages;
+              updateBottleBadge();
+              updateBottlePanel();
+            }
+          }
+        )
+        .subscribe();
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════════
+       MESSAGE POPUP
+       ═══════════════════════════════════════════════════════════════════════ */
+    function showMessagePopup(message) {
+      if (!message) return;
+      if (popupTimer) clearTimeout(popupTimer);
+
+      msgPopupTitle.textContent = '💌 漂流瓶 · 来自上一个人的留言';
+      msgPopupText.textContent = message.text;
+      msgPopupTime.textContent = formatTime(message.created_at);
+      msgPopupOverlay.classList.remove('hidden');
+      void msgPopupOverlay.offsetWidth;
+      msgPopupOverlay.classList.add('show');
+
+      popupTimer = setTimeout(dismissPopup, 8000);
+    }
+
+    function dismissPopup() {
+      if (popupTimer) clearTimeout(popupTimer);
+      msgPopupOverlay.classList.remove('show');
+      msgPopupOverlay.addEventListener('transitionend', function handler() {
+        msgPopupOverlay.classList.add('hidden');
+        msgPopupOverlay.removeEventListener('transitionend', handler);
+      });
+    }
+
+    msgPopupDismiss.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dismissPopup();
+    });
+
+    msgPopupOverlay.addEventListener('click', (e) => {
+      if (e.target === msgPopupOverlay) dismissPopup();
+    });
+
+    /* ═══════════════════════════════════════════════════════════════════════
+       BOTTLE PANEL
+       ═══════════════════════════════════════════════════════════════════════ */
+    function openBottlePanel() {
+      updateBottlePanel();
+      bottlePanel.classList.add('open');
+      bottleBackdrop.classList.remove('hidden');
+      void bottleBackdrop.offsetWidth;
+      bottleBackdrop.classList.add('show');
+      setTimeout(() => bottleInput.focus(), 400);
+    }
+
+    function closeBottlePanel() {
+      bottlePanel.classList.remove('open');
+      bottleBackdrop.classList.remove('show');
+      bottleBackdrop.addEventListener('transitionend', function handler() {
+        bottleBackdrop.classList.add('hidden');
+        bottleBackdrop.removeEventListener('transitionend', handler);
+      });
+    }
+
+    function updateBottleBadge() {
+      if (totalUnreadMessages > 0) {
+        bottleBadge.textContent = totalUnreadMessages > 99 ? '99+' : totalUnreadMessages;
+        bottleBadge.style.display = 'flex';
+      } else {
+        bottleBadge.textContent = '';
+        bottleBadge.style.display = 'none';
+      }
+    }
+
+    function updateBottlePanel() {
+      if (totalUnreadMessages > 0) {
+        bottleUnreadCount.textContent = `有 ${totalUnreadMessages} 封漂流信等待开启`;
+        bottleOpenBtn.disabled = false;
+        bottleOpenBtn.style.opacity = '1';
+      } else {
+        bottleUnreadCount.textContent = '暂无未读的漂流信';
+        bottleOpenBtn.disabled = true;
+        bottleOpenBtn.style.opacity = '0.35';
+      }
+    }
+
+    async function revealMessage() {
+      if (!supabase || totalUnreadMessages <= 0) return;
+
+      bottleOpenBtn.disabled = true;
+      bottleOpenBtn.textContent = '⏳ 正在打开…';
+
+      // Fetch oldest unrevealed message
+      const { data: msgs, error } = await supabase
+        .from('messages')
+        .select('*')
+        .eq('revealed', false)
+        .order('created_at', { ascending: true })
+        .limit(1);
+
+      if (error || !msgs || msgs.length === 0) {
+        bottleOpenBtn.disabled = false;
+        bottleOpenBtn.innerHTML = '<span>📭</span> 打开漂流瓶';
+        return;
+      }
+
+      const msg = msgs[0];
+
+      // Mark as revealed
+      const { error: updateError } = await supabase
+        .from('messages')
+        .update({ revealed: true })
+        .eq('id', msg.id);
+
+      if (updateError) {
+        console.warn('标记已读失败:', updateError);
+        bottleOpenBtn.disabled = false;
+        bottleOpenBtn.innerHTML = '<span>📭</span> 打开漂流瓶';
+        return;
+      }
+
+      localUpdateIds.add(msg.id);
+      totalUnreadMessages = Math.max(0, totalUnreadMessages - 1);
+      lastUnreadCount = totalUnreadMessages;
+      updateBottleBadge();
+      updateBottlePanel();
+      bottleOpenBtn.innerHTML = '<span>📭</span> 打开漂流瓶';
+
+      // Show the message in popup
+      closeBottlePanel();
+      setTimeout(() => showMessagePopup(msg), 500);
+    }
+
+    async function submitBottleMessage() {
+      const text = bottleInput.value.trim();
+      if (!text) return;
+      bottleInput.value = '';
+
+      if (!supabase) return;
+
+      const { data: inserted, error } = await supabase
+        .from('messages')
+        .insert({ text, revealed: false })
+        .select()
+        .single();
+
+      if (error || !inserted) {
+        console.warn('留言提交失败:', error);
+        return;
+      }
+
+      localInsertIds.add(inserted.id);
+      totalUnreadMessages++;
+      lastUnreadCount = totalUnreadMessages;
+      updateBottleBadge();
+      updateBottlePanel();
+    }
+
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function formatTime(ts) {
+      const d = new Date(ts);
+      const now = new Date();
+      const diff = now - d;
+      if (diff < 60000) return '刚刚';
+      if (diff < 3600000) return Math.floor(diff / 60000) + ' 分钟前';
+      if (diff < 86400000) return Math.floor(diff / 3600000) + ' 小时前';
+      if (diff < 172800000) return '昨天';
+      const month = d.getMonth() + 1;
+      const day = d.getDate();
+      const hours = String(d.getHours()).padStart(2, '0');
+      const minutes = String(d.getMinutes()).padStart(2, '0');
+      return `${month}/${day} ${hours}:${minutes}`;
+    }
+
+    bottleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openBottlePanel();
+    });
+
+    bottleClose.addEventListener('click', () => closeBottlePanel());
+    bottleBackdrop.addEventListener('click', () => closeBottlePanel());
+
+    bottleOpenBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      revealMessage();
+    });
+
+    bottleInput.addEventListener('click', (e) => e.stopPropagation());
+    bottleInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        submitBottleMessage();
+      }
+    });
+
+    /* ═══════════════════════════════════════════════════════════════════════
+       WISH WALL
+       ═══════════════════════════════════════════════════════════════════════ */
+    function renderWishWall() {
+      wishwallBody.innerHTML = '';
+      if (wishMessages.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'wishwall-empty';
+        empty.textContent = '还没有心愿，快来许一个吧 ✨';
+        wishwallBody.appendChild(empty);
+        return;
+      }
+      // Show newest first
+      const sorted = [...wishMessages].reverse();
+      const stars = ['⭐', '🌟', '✨', '💫', '🌠', '⭐', '✨', '🌟', '💫', '🌠'];
+      sorted.forEach((wish, i) => {
+        const card = document.createElement('div');
+        card.className = 'wish-card';
+        const star = stars[i % stars.length];
+        const time = formatTime(wish.created_at);
+        card.innerHTML = `
+          <span class="wish-card-star">${star}</span>
+          <span class="wish-card-text">${escapeHTML(wish.text)}</span>
+          <span class="wish-card-time">${time}</span>
+        `;
+        wishwallBody.appendChild(card);
+      });
+    }
+
+    function openWishwall() {
+      renderWishWall();
+      wishwallPanel.classList.add('show');
+      wishwallBackdrop.classList.remove('hidden');
+      void wishwallBackdrop.offsetWidth;
+      wishwallBackdrop.classList.add('show');
+    }
+
+    function closeWishwall() {
+      wishwallPanel.classList.remove('show');
+      wishwallBackdrop.classList.remove('show');
+      wishwallBackdrop.addEventListener('transitionend', function handler() {
+        wishwallBackdrop.classList.add('hidden');
+        wishwallBackdrop.removeEventListener('transitionend', handler);
+      });
+    }
+
+    wishwallBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openWishwall();
+    });
+
+    wishwallClose.addEventListener('click', () => closeWishwall());
+    wishwallBackdrop.addEventListener('click', () => closeWishwall());
+
+    wishwallPanel.addEventListener('click', (e) => e.stopPropagation());
+
+    bottleSendBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      submitBottleMessage();
+    });
+
+    bottlePanel.addEventListener('click', (e) => e.stopPropagation());
 
     /* ═══════════════════════════════════════════════════════════════════════
        RESIZE
@@ -499,7 +1621,7 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════════════
-       AUDIO — delicate chime
+       AUDIO — subtle chime
        ═══════════════════════════════════════════════════════════════════════ */
     function initAudio() {
       if (audioCtx) return;
@@ -513,42 +1635,41 @@
     function playChime() {
       if (!audioCtx) return;
       const now = audioCtx.currentTime;
-      // A delicate pentatonic melody — G5, A5, C6, E6
-      const notes = [783.99, 880.00, 1046.50, 1318.51];
+      const notes = [523.25, 659.25, 783.99];
       notes.forEach((freq, i) => {
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
         osc.type = 'sine';
         osc.frequency.value = freq;
-        gain.gain.setValueAtTime(0, now + i * 0.07);
-        gain.gain.linearRampToValueAtTime(CONFIG.chimeVolume, now + i * 0.07 + 0.04);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.07 + 1.0);
+        gain.gain.setValueAtTime(0, now + i * 0.06);
+        gain.gain.linearRampToValueAtTime(CONFIG.chimeVolume, now + i * 0.06 + 0.04);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.06 + 0.9);
         osc.connect(gain);
         gain.connect(audioCtx.destination);
-        osc.start(now + i * 0.07);
-        osc.stop(now + i * 0.07 + 1.05);
+        osc.start(now + i * 0.06);
+        osc.stop(now + i * 0.06 + 0.95);
       });
     }
 
     /* ═══════════════════════════════════════════════════════════════════════
-       NEBULA — soft rose/lavender blobs
+       NEBULA
        ═══════════════════════════════════════════════════════════════════════ */
     function initNebula() {
       nebulaBlobs = [];
       const colors = [
-        { h: 320, s: 30, l: 22 }, // rose
-        { h: 270, s: 25, l: 20 }, // lavender
-        { h: 340, s: 28, l: 18 }, // blush
-        { h: 290, s: 22, l: 17 }, // mauve
+        { h: 215, s: 45, l: 22 },
+        { h: 230, s: 35, l: 18 },
+        { h: 200, s: 40, l: 20 },
+        { h: 240, s: 30, l: 16 },
       ];
       for (let i = 0; i < CONFIG.nebulaCount; i++) {
         const c = colors[i % colors.length];
         nebulaBlobs.push({
           x: W * (0.2 + Math.random() * 0.6),
           y: H * (0.2 + Math.random() * 0.6),
-          r: Math.min(W, H) * (0.35 + Math.random() * 0.5),
-          dx: (Math.random() - 0.5) * 0.07,
-          dy: (Math.random() - 0.5) * 0.05,
+          r: Math.min(W, H) * (0.35 + Math.random() * 0.45),
+          dx: (Math.random() - 0.5) * 0.08,
+          dy: (Math.random() - 0.5) * 0.06,
           h: c.h,
           s: c.s,
           l: c.l,
@@ -566,8 +1687,8 @@
         if (b.y > H + b.r) b.y = -b.r;
 
         const grad = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.r);
-        grad.addColorStop(0, `hsla(${b.h}, ${b.s}%, ${b.l}%, 0.1)`);
-        grad.addColorStop(0.4, `hsla(${b.h}, ${b.s}%, ${b.l}%, 0.05)`);
+        grad.addColorStop(0, `hsla(${b.h}, ${b.s}%, ${b.l}%, 0.12)`);
+        grad.addColorStop(0.4, `hsla(${b.h}, ${b.s}%, ${b.l}%, 0.06)`);
         grad.addColorStop(1, 'transparent');
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, W, H);
@@ -580,35 +1701,32 @@
     function initBgStars() {
       bgStars = [];
       for (let i = 0; i < CONFIG.bgStarCount; i++) {
-        // Mix of rose-gold and cool white stars
-        const isRose = Math.random() < 0.25;
         bgStars.push({
           x: Math.random() * W,
           y: Math.random() * H,
-          r: Math.random() * 1.5 + 0.2,
-          baseAlpha: Math.random() * 0.4 + 0.12,
-          twinkleSpeed: Math.random() * 0.014 + 0.003,
+          r: Math.random() * 1.6 + 0.2,
+          baseAlpha: Math.random() * 0.45 + 0.15,
+          twinkleSpeed: Math.random() * 0.015 + 0.003,
           twinkleOffset: Math.random() * Math.PI * 2,
-          hue: isRose ? 330 + Math.random() * 30 : 250 + Math.random() * 60,
-          sat: isRose ? 25 : 15,
+          hue: Math.random() < 0.08 ? 200 + Math.random() * 30 : 210 + Math.random() * 50,
         });
       }
     }
 
     function drawBgStars() {
       bgStars.forEach(s => {
-        const alpha = s.baseAlpha + Math.sin(time * s.twinkleSpeed + s.twinkleOffset) * 0.22;
-        const a = Math.max(0.04, Math.min(0.85, alpha));
+        const alpha = s.baseAlpha + Math.sin(time * s.twinkleSpeed + s.twinkleOffset) * 0.25;
+        const a = Math.max(0.05, Math.min(0.9, alpha));
 
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${s.hue}, ${s.sat}%, 80%, ${a})`;
+        ctx.fillStyle = `hsla(${s.hue}, 25%, 78%, ${a})`;
         ctx.fill();
 
-        if (s.r > 0.7) {
+        if (s.r > 0.8) {
           ctx.beginPath();
-          ctx.arc(s.x, s.y, s.r * 3.5, 0, Math.PI * 2);
-          ctx.fillStyle = `hsla(${s.hue}, ${s.sat}%, 80%, ${a * 0.08})`;
+          ctx.arc(s.x, s.y, s.r * 3, 0, Math.PI * 2);
+          ctx.fillStyle = `hsla(${s.hue}, 25%, 78%, ${a * 0.1})`;
           ctx.fill();
         }
       });
@@ -644,36 +1762,33 @@
         ctx.lineTo(heartPoints[i].x, heartPoints[i].y);
       }
       ctx.closePath();
-      ctx.strokeStyle = 'rgba(210, 160, 190, 0.1)';
+      ctx.strokeStyle = 'rgba(100, 150, 210, 0.1)';
       ctx.lineWidth = 0.5;
-      ctx.setLineDash([2, 7]);
+      ctx.setLineDash([2, 6]);
       ctx.stroke();
       ctx.setLineDash([]);
 
       settledStars.forEach(s => {
-        const pulse = 1 + Math.sin(time * 0.025 + s.pulseOffset) * 0.28;
-        const alpha = 0.5 + Math.sin(time * 0.025 + s.pulseOffset) * 0.32;
+        const pulse = 1 + Math.sin(time * 0.03 + s.pulseOffset) * 0.25;
+        const alpha = 0.55 + Math.sin(time * 0.03 + s.pulseOffset) * 0.3;
 
-        // Outer glow
-        const glow = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 9 * pulse);
-        glow.addColorStop(0, `rgba(240, 200, 220, ${alpha * 0.5})`);
-        glow.addColorStop(0.5, `rgba(220, 170, 195, ${alpha * 0.12})`);
+        const glow = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 8 * pulse);
+        glow.addColorStop(0, `rgba(120, 180, 240, ${alpha * 0.5})`);
+        glow.addColorStop(0.5, `rgba(90, 150, 220, ${alpha * 0.12})`);
         glow.addColorStop(1, 'transparent');
         ctx.fillStyle = glow;
         ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r * 9 * pulse, 0, Math.PI * 2);
+        ctx.arc(s.x, s.y, s.r * 8 * pulse, 0, Math.PI * 2);
         ctx.fill();
 
-        // Core
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r * pulse, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 235, 245, ${alpha})`;
+        ctx.fillStyle = `rgba(200, 225, 255, ${alpha})`;
         ctx.fill();
 
-        // Bright center
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r * 0.4 * pulse, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 248, 252, ${alpha + 0.2})`;
+        ctx.fillStyle = `rgba(230, 245, 255, ${alpha + 0.2})`;
         ctx.fill();
       });
     }
@@ -714,8 +1829,8 @@
         const tailY = s.y - s.vy * s.len * 0.06;
 
         const grad = ctx.createLinearGradient(s.x, s.y, tailX, tailY);
-        grad.addColorStop(0, `rgba(255, 245, 252, ${s.life})`);
-        grad.addColorStop(0.1, `rgba(255, 230, 240, ${s.life * 0.8})`);
+        grad.addColorStop(0, `rgba(255, 255, 255, ${s.life})`);
+        grad.addColorStop(0.1, `rgba(200, 225, 255, ${s.life * 0.8})`);
         grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
         ctx.beginPath();
@@ -727,13 +1842,13 @@
 
         ctx.beginPath();
         ctx.arc(s.x, s.y, 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 245, 252, ${s.life})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${s.life})`;
         ctx.fill();
       }
     }
 
     /* ═══════════════════════════════════════════════════════════════════════
-       WISH LANTERNS — rose gold sparkles
+       WISH LANTERNS
        ═══════════════════════════════════════════════════════════════════════ */
     function createLantern(x, y, message) {
       if (lanterns.length >= CONFIG.maxLanterns) return;
@@ -752,10 +1867,7 @@
       }
 
       lanterns.push({
-        x,
-        y,
-        tx,
-        ty,
+        x, y, tx, ty,
         message: message || '',
         phase: 'rising',
         progress: 0,
@@ -795,7 +1907,6 @@
               life: 1,
               decay: 0.02 + Math.random() * 0.04,
               r: Math.random() * 1.5 + 0.3,
-              hue: 320 + Math.random() * 30,
             });
           }
         }
@@ -803,7 +1914,6 @@
         if (l.phase === 'settling') {
           const elapsed = time - l.settleStart;
           const t = Math.min(elapsed / l.settleDuration, 1);
-          const ease = 1 - Math.pow(1 - t, 3);
           l.x += (l.tx - l.x) * 0.12;
           l.y += (l.ty - l.y) * 0.12;
 
@@ -812,8 +1922,7 @@
             l.x = l.tx;
             l.y = l.ty;
             settledStars.push({
-              x: l.x,
-              y: l.y,
+              x: l.x, y: l.y,
               r: 1.2 + Math.random() * 1,
               pulseOffset: Math.random() * Math.PI * 2,
             });
@@ -822,39 +1931,36 @@
           }
         }
 
-        // Draw lantern glow — rose gold
         const alpha = l.phase === 'settling' ? 0.8 : 0.9;
         const r = l.phase === 'settling' ? 3 : 4;
 
         const glow = ctx.createRadialGradient(l.x, l.y, 0, l.x, l.y, r * 6);
-        glow.addColorStop(0, `rgba(255, 225, 240, ${alpha * 0.7})`);
-        glow.addColorStop(0.3, `rgba(230, 185, 205, ${alpha * 0.3})`);
-        glow.addColorStop(0.7, `rgba(200, 145, 170, ${alpha * 0.06})`);
+        glow.addColorStop(0, `rgba(160, 210, 255, ${alpha * 0.7})`);
+        glow.addColorStop(0.3, `rgba(100, 170, 240, ${alpha * 0.3})`);
+        glow.addColorStop(0.7, `rgba(60, 120, 200, ${alpha * 0.06})`);
         glow.addColorStop(1, 'transparent');
         ctx.fillStyle = glow;
         ctx.beginPath();
         ctx.arc(l.x, l.y, r * 6, 0, Math.PI * 2);
         ctx.fill();
 
-        // Core
         ctx.beginPath();
         ctx.arc(l.x, l.y, r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 240, 248, ${alpha})`;
+        ctx.fillStyle = `rgba(200, 230, 255, ${alpha})`;
         ctx.fill();
 
         ctx.beginPath();
         ctx.arc(l.x, l.y, r * 0.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 250, 254, 1)`;
+        ctx.fillStyle = `rgba(240, 248, 255, 1)`;
         ctx.fill();
 
-        // Wish text near lantern
         if (l.message) {
-          const textAlpha = l.phase === 'settling' ? 0.4 : 0.65;
+          const textAlpha = l.phase === 'settling' ? 0.45 : 0.7;
           ctx.save();
           ctx.font = '13px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif';
           ctx.textAlign = 'center';
-          ctx.fillStyle = `rgba(255, 230, 240, ${textAlpha})`;
-          ctx.shadowColor = `rgba(240, 200, 220, ${textAlpha * 0.6})`;
+          ctx.fillStyle = `rgba(200, 230, 255, ${textAlpha})`;
+          ctx.shadowColor = `rgba(120, 180, 240, ${textAlpha * 0.6})`;
           ctx.shadowBlur = 6;
           ctx.fillText(l.message, l.x, l.y - 18);
           ctx.restore();
@@ -883,8 +1989,7 @@
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        const hue = p.hue || 330;
-        ctx.fillStyle = `hsla(${hue}, 30%, 82%, ${p.life * 0.55})`;
+        ctx.fillStyle = `rgba(140, 200, 240, ${p.life * 0.6})`;
         ctx.fill();
       }
     }
@@ -895,11 +2000,10 @@
     function draw() {
       ctx.clearRect(0, 0, W, H);
 
-      // Background gradient
       const bgGrad = ctx.createRadialGradient(W * 0.5, H * 0.4, 0, W * 0.5, H * 0.5, Math.max(W, H) * 0.8);
-      bgGrad.addColorStop(0, '#0f0c1a');
-      bgGrad.addColorStop(0.5, '#0a0814');
-      bgGrad.addColorStop(1, '#05040c');
+      bgGrad.addColorStop(0, '#0a1020');
+      bgGrad.addColorStop(0.5, '#060818');
+      bgGrad.addColorStop(1, '#030410');
       ctx.fillStyle = bgGrad;
       ctx.fillRect(0, 0, W, H);
 
@@ -910,10 +2014,9 @@
       drawParticles();
       drawLanterns();
 
-      // Vignette
       const vignette = ctx.createRadialGradient(W * 0.5, H * 0.5, W * 0.35, W * 0.5, H * 0.5, W * 0.75);
       vignette.addColorStop(0, 'transparent');
-      vignette.addColorStop(1, 'rgba(2, 2, 6, 0.55)');
+      vignette.addColorStop(1, 'rgba(2, 2, 8, 0.55)');
       ctx.fillStyle = vignette;
       ctx.fillRect(0, 0, W, H);
     }
@@ -936,13 +2039,12 @@
       createLantern(ex, ey, message);
 
       if (message) {
-        saveWish(message);
         const isFirstWish = totalWishes === 0;
         totalWishes++;
         wishCountEl.textContent = totalWishes;
-        spawnFloatingPetal(message);
+        spawnFloatingWish(message);
         if (isFirstWish) {
-          setTimeout(scheduleFloatingPetals, 3000);
+          setTimeout(scheduleFloatingWishes, 3000);
         }
       }
 
@@ -967,10 +2069,42 @@
       ripple.addEventListener('animationend', () => ripple.remove());
     }
 
-    function submitWish() {
+    async function submitWish() {
       const text = wishInput.value.trim();
       if (!text) return;
       wishInput.value = '';
+
+      if (!supabase) {
+        const rect = glassCard.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        handleInteraction(cx, cy, text);
+        return;
+      }
+
+      // Insert wish
+      const { data: inserted, error } = await supabase
+        .from('wishes')
+        .insert({ text })
+        .select()
+        .single();
+
+      if (error || !inserted) {
+        console.warn('Supabase insert error:', error);
+        const rect = glassCard.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        handleInteraction(cx, cy, text);
+        return;
+      }
+
+      localInsertIds.add(inserted.id);
+      wishMessages.push(inserted);
+      totalWishes = wishMessages.length;
+      lastWishCount = totalWishes;
+      wishCountEl.textContent = totalWishes;
+      if (wishwallPanel.classList.contains('show')) renderWishWall();
+
       const rect = glassCard.getBoundingClientRect();
       const cx = rect.left + rect.width / 2;
       const cy = rect.top + rect.height / 2;
@@ -979,11 +2113,25 @@
 
     document.addEventListener('click', (e) => {
       if (e.target === wishInput || e.target === wishSendBtn) return;
+      if (e.target.closest('.msg-popup-overlay')) return;
+      if (e.target.closest('.bottle-panel')) return;
+      if (e.target.closest('.bottle-btn')) return;
+      if (e.target.closest('.bottle-backdrop')) return;
+      if (e.target.closest('.wishwall-panel')) return;
+      if (e.target.closest('.wishwall-btn')) return;
+      if (e.target.closest('.wishwall-backdrop')) return;
       handleInteraction(e.clientX, e.clientY);
     });
 
     document.addEventListener('touchstart', (e) => {
       if (e.target === wishInput || e.target === wishSendBtn) return;
+      if (e.target.closest('.msg-popup-overlay')) return;
+      if (e.target.closest('.bottle-panel')) return;
+      if (e.target.closest('.bottle-btn')) return;
+      if (e.target.closest('.bottle-backdrop')) return;
+      if (e.target.closest('.wishwall-panel')) return;
+      if (e.target.closest('.wishwall-btn')) return;
+      if (e.target.closest('.wishwall-backdrop')) return;
       if (e.touches.length === 1) {
         handleInteraction(e.touches[0].clientX, e.touches[0].clientY);
       }
@@ -1018,39 +2166,35 @@
     }, { passive: true });
 
     /* ═══════════════════════════════════════════════════════════════════════
-       FLOATING PETALS
+       FLOATING WISH MESSAGES
        ═══════════════════════════════════════════════════════════════════════ */
-    const PETAL_EMOJIS = ['🌸', '🦋', '✨', '💫', '🕊️', '🌷', '💖'];
-
-    function spawnFloatingPetal(text) {
+    function spawnFloatingWish(text) {
       const el = document.createElement('span');
-      el.className = 'floating-petal';
-      // Use a petal/bird emoji prefix for visual flair
-      const emoji = PETAL_EMOJIS[Math.floor(Math.random() * PETAL_EMOJIS.length)];
-      el.textContent = emoji + ' ' + text;
-      const x = 5 + Math.random() * 88;
+      el.className = 'floating-wish';
+      el.textContent = text;
+      const x = 8 + Math.random() * 84;
       el.style.left = x + '%';
-      const dur = 9 + Math.random() * 6;
+      const dur = 8 + Math.random() * 5;
       el.style.animationDuration = dur + 's';
-      floatingPetals.appendChild(el);
+      floatingWishes.appendChild(el);
       el.addEventListener('animationend', () => el.remove());
     }
 
-    function scheduleFloatingPetals() {
+    function scheduleFloatingWishes() {
       if (wishMessages.length === 0) return;
       const idx = Math.floor(Math.random() * wishMessages.length);
-      spawnFloatingPetal(wishMessages[idx].text);
-      const delay = 3500 + Math.random() * 5500;
-      setTimeout(scheduleFloatingPetals, delay);
+      spawnFloatingWish(wishMessages[idx].text);
+      const delay = 3000 + Math.random() * 5000;
+      setTimeout(scheduleFloatingWishes, delay);
     }
 
-    function burstFloatingPetals() {
+    function burstFloatingWishes() {
       if (wishMessages.length === 0) return;
       const count = Math.min(5, wishMessages.length);
       const shuffled = [...wishMessages].sort(() => Math.random() - 0.5);
       const selected = shuffled.slice(0, count);
       selected.forEach((wish, i) => {
-        setTimeout(() => spawnFloatingPetal(wish.text), i * 450);
+        setTimeout(() => spawnFloatingWish(wish.text), i * 400);
       });
     }
 
@@ -1082,35 +2226,42 @@
     /* ═══════════════════════════════════════════════════════════════════════
        INIT
        ═══════════════════════════════════════════════════════════════════════ */
-    function init() {
+    async function init() {
       resize();
       window.addEventListener('resize', resize);
 
-      loadWishes();
+      const ok = initSupabase();
+      if (ok) {
+        await loadFromSupabase();
+        setupRealtime();
+      } else {
+        connectionDot.classList.add('offline');
+        connectionDot.textContent = '未配置 Supabase';
+      }
+
       scheduleShootingStar();
       updateParallax();
       requestAnimationFrame(loop);
 
-      const initialStars = 10;
+      const initialStars = 8;
       for (let i = 0; i < initialStars && i < heartPoints.length; i++) {
         const idx = Math.floor((i / initialStars) * heartPoints.length);
         const p = heartPoints[idx];
         settledStars.push({
-          x: p.x,
-          y: p.y,
+          x: p.x, y: p.y,
           r: 1.2 + Math.random() * 1,
           pulseOffset: Math.random() * Math.PI * 2,
         });
       }
 
-      totalWishes = wishMessages.length;
       wishCountEl.textContent = totalWishes;
       wishCounter.classList.add('visible');
       wishInputArea.classList.add('visible');
+      updateBottleBadge();
 
       if (wishMessages.length > 0) {
-        setTimeout(burstFloatingPetals, 1500);
-        setTimeout(() => scheduleFloatingPetals(), 1500 + Math.min(5, wishMessages.length) * 450 + 1200);
+        setTimeout(burstFloatingWishes, 1500);
+        setTimeout(() => scheduleFloatingWishes(), 1500 + Math.min(5, wishMessages.length) * 400 + 1000);
       }
 
       setTimeout(() => spawnShootingStar(), 1500);
